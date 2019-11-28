@@ -1,0 +1,13 @@
+name: actionbot-greeting
+on:
+  issues:
+    types: [opened]
+jobs:
+  greet_issue_submitter:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: jsdevtools/actionbot-greeting#dev
+      with:
+        action-token: "${{ secrets.Access_token }}"
+        project-url: "https://github.com/orgs/github/projects/1"
+        column-name: "New issues should show up here"
