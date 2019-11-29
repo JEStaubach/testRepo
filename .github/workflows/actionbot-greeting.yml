@@ -9,5 +9,6 @@ jobs:
     - uses: JEStaubach/actionbot-greeting@dev
       with:
         action-token: "${{ secrets.Access_token }}"
-        project-url: "https://github.com/orgs/github/projects/1"
-        column-name: "New issues should show up here"
+        comment-text: "Thanks for opening this issue!"
+        board-name: "triage"
+        column-name: "awaiting review"
