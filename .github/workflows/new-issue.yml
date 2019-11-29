@@ -1,9 +1,10 @@
-name: actions.github-projects.new-issue
+name: github-projects.new-issue
 on:
   issues:
     types: [opened]
 jobs:
-  greet_issue_submitter:
+  new_issue:
+    name: "github-projects.new-issue"
     runs-on: ubuntu-latest
     steps:
       - name: "greeting"
