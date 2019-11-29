@@ -1,0 +1,21 @@
+name: actions.github-projects.new-issue
+on:
+  issues:
+    types: [opened]
+jobs:
+  greet_issue_submitter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "greeting"
+        uses: JEStaubach/actions/github-projects/new-issue/greeting@dev
+        with:
+          action-token: "${{ secrets.Access_token }}"
+          comment-text: "Thanks for opening this issue!"
+          board-name: "triage"
+          column-name: "awaiting review"
+      - name: "create-card-in-board-column"
+        uses: JEStaubach/actions/github-projects/new-issue/create-card-in-board-column@dev
+        with:
+          action-token: "${{ secrets.Access_token }}"
+          board-name: "triage"
+          column-name: "awaiting review"
