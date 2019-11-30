@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "get-deps"
-        run: npm install JEStaubach/actions@dev
+        run: npm install JEStaubach/actions#dev
       - name: "move-issue-card"
         uses: JEStaubach/actions/github-projects/update-issue/move-issue-card@dev
         with:
