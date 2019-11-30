@@ -1,0 +1,13 @@
+name: unassign-issue
+on:
+  issues:
+    types: [unassigned]
+jobs:
+  update_issue:
+    name: "github-projects.update-issue.move-issue-card"
+    runs-on: ubuntu-latest
+    steps:
+      - name: "move-issue-card"
+        uses: JEStaubach/actions/github-projects/update-issue/move-issue-card@dev
+        with:
+          action-token: "${{ secrets.Access_token }}"
