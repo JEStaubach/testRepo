@@ -4,18 +4,10 @@ on:
     types: [unassigned]
 jobs:
   update_issue:
-    name: "github-projects.update-issue.move-issue-card"
+    name: "unassign-issue.move-issue-card"
     runs-on: ubuntu-latest
     steps:
       - name: "move-issue-card"
-        uses: actions/checkout@v1
+        uses: JEStaubach/actions-move-issue-card@dev
         with:
-          repository: JEstaubach/actions
-          ref: refs/heads/dev
-          token: ${{ secrets.Access_token }}
-      - run: |
-          cd ./testrepo/actions/github-projects/update-issue/move-issue-card
-          npm ci
-          node index.js
-          env:
-            ACTION_TOKEN: "${{ secrets.Access_token }}"
+          action-token: "${{ secrets.Access_token }}"
