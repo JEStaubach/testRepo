@@ -12,10 +12,8 @@ jobs:
         with:
           repository: JEstaubach/actions
           ref: refs/heads/dev
-      - run: pwd
-      - run: echo $(ls)
       - run: |
-          cd github-projects/update-issue/move-issue-card
+          cd ./github-projects/update-issue/move-issue-card
           npm ci
           node index.js
           env:
