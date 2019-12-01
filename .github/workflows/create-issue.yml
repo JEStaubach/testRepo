@@ -13,7 +13,7 @@ jobs:
           action-token: "${{ secrets.Access_token }}"
           comment-text: "Thanks for opening this issue!"
       - name: "create-once-boards"
-        uses: JEStaubach/action-create-once-board@dev
+        uses: JEStaubach/action-create-once-boards@dev
         with:
           action-token: "${{ secrets.Access_token }}"
       - name: "create-card-in-board-column"
