@@ -7,16 +7,25 @@ jobs:
     name: "github-projects.create-issue"
     runs-on: ubuntu-latest
     steps:
+      - name: "get dependencies"
+        uses: actions/checkout@v1
+        with:
+          repository: JEstaubach/actions
+          ref: refs/heads/dev
       - name: "greeting"
-        uses: JEStaubach/actions/github-projects/create-issue/greeting@dev
-        with:
-          action-token: "${{ secrets.Access_token }}"
-          comment-text: "Thanks for opening this issue!"
-          board-name: "triage"
-          column-name: "awaiting review"
+        run: |
+          cd actions/github-projects/create-issue/greeting
+          npm ci
+          node index.js
+          env:
+            ACTION_TOKEN: "${{ secrets.Access_token }}"
+            COMMENT_TEXT: "Thanks for opening this issue!"
       - name: "create-card-in-board-column"
-        uses: JEStaubach/actions/github-projects/create-issue/create-card-in-board-column@dev
-        with:
-          action-token: "${{ secrets.Access_token }}"
-          board-name: "triage"
-          column-name: "awaiting review"
+        run: |
+          cd ../create-card-in-board-column
+          npm ci
+          node index.js
+          env:
+            ACTION_TOKEN: "${{ secrets.Access_token }}"
+            BOARD_NAME: "triage"
+            COLUMN_NAME: "awaiting review"
