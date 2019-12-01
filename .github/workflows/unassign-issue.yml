@@ -8,6 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "move-issue-card"
-        uses: JEStaubach/actions-move-issue-card@dev
+        uses: JEStaubach/action-move-issue-card@dev
         with:
           action-token: "${{ secrets.Access_token }}"
