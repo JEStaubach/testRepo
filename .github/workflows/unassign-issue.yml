@@ -7,12 +7,15 @@ jobs:
     name: "github-projects.update-issue.move-issue-card"
     runs-on: ubuntu-latest
     steps:
+      - name: "move-issue-card"
+        uses: actions/checkout@v1
+        with:
+          repository: JEstaubach/actions
+          ref: refs/heads/dev
       - name: "get-deps"
         run: |
-          npm install JEStaubach/actions#dev @actions/core @actions/github
-          cp -R node_modules/@jestaubach/actions/github-projects/update-issue/move-issue-card/* ./
+          cd actions/github-projects/update-issue/move-issue-card
+          npm ci
           node index.js
-      - name: "move-issue-card"
-        uses: JEStaubach/actions/github-projects/update-issue/move-issue-card@dev
-        with:
-          action-token: "${{ secrets.Access_token }}"
+          env:
+            ACTION_TOKEN: "${{ secrets.Access_token }}"
