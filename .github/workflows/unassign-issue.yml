@@ -14,7 +14,7 @@ jobs:
           ref: refs/heads/dev
           token: ${{ secrets.Access_token }}
       - run: |
-          cd ./actions/github-projects/update-issue/move-issue-card
+          cd ./testrepo/actions/github-projects/update-issue/move-issue-card
           npm ci
           node index.js
           env:
