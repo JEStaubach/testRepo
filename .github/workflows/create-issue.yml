@@ -16,5 +16,5 @@ jobs:
         uses: JEStaubach/action-create-card-in-board-column@dev
         with:
           action-token: "${{ secrets.Access_token }}"
-          board-column: "triage"
+          board-name: "triage"
           column-name: "awaiting review"
