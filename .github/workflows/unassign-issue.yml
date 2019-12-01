@@ -14,7 +14,7 @@ jobs:
           ref: refs/heads/dev
       - name: "get-deps"
         run: |
-          cd actions/github-projects/update-issue/move-issue-card
+          cd github-projects/update-issue/move-issue-card
           npm ci
           node index.js
           env:
