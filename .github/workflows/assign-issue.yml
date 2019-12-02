@@ -1,0 +1,14 @@
+name: assign-issue
+on:
+  issues:
+    types: [assigned]
+jobs:
+  update_issue:
+    name: "assign-issue.move-issue-card"
+    runs-on: ubuntu-latest
+    steps:
+      - name: "move-issue-card"
+        uses: JEStaubach/action-move-issue-card@dev
+        with:
+          action-token: "${{ secrets.Access_token }}"
+          
