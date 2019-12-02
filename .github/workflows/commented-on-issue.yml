@@ -11,7 +11,3 @@ jobs:
         uses: JEStaubach/action-adjust-commented-label@dev
         with:
           action-token: "${{ secrets.Access_token }}"
-      - name: "move-issue-card"
-        uses: JEStaubach/action-move-issue-card@dev
-        with:
-          action-token: "${{ secrets.Access_token }}"
