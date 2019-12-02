@@ -16,6 +16,10 @@ jobs:
         uses: JEStaubach/action-create-once-boards@dev
         with:
           action-token: "${{ secrets.Access_token }}"
+      - name: "create-once-labels"
+        uses: JEStaubach/action-create-once-labels@dev
+        with:
+          action-token: "${{ secrets.Access_token }}"
       - name: "create-card-in-board-column"
         uses: JEStaubach/action-create-card-in-board-column@dev
         with:
