@@ -1,0 +1,21 @@
+name: labeled-issue
+on:
+  issues:
+    types: [labeled]
+jobs:
+  update_issue:
+    name: "labeled-issue.move-issue-card"
+    runs-on: ubuntu-latest
+    steps:
+      - name: "adjust-title-to-conventions"
+        uses: JEStaubach/action-adjust-title-to-conventions@dev
+        with:
+          action-token: "${{ secrets.Access_token }}"
+      - name: "adjust-labels-to-conventions"
+        uses: JEStaubach/action-adjust-labels-to-conventions@dev
+        with:
+          action-token: "${{ secrets.Access_token }}"
+      - name: "move-issue-card"
+        uses: JEStaubach/action-move-issue-card@dev
+        with:
+          action-token: "${{ secrets.Access_token }}"
