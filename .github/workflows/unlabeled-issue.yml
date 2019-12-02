@@ -1,0 +1,13 @@
+name: unlabeled-issue
+on:
+  issues:
+    types: [unlabeled]
+jobs:
+  update_issue:
+    name: "unlabeled-issue.move-issue-card"
+    runs-on: ubuntu-latest
+    steps:
+      - name: "move-issue-card"
+        uses: JEStaubach/action-move-issue-card@dev
+        with:
+          action-token: "${{ secrets.Access_token }}"
