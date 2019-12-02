@@ -10,12 +10,12 @@ jobs:
       - name: "greeting"
         uses: JEStaubach/action-greeting@dev
         with:
-          action-token: "${{ secrets.Access_token }}"
+          action-token: "${{ secrets.GITHUB_TOKEN }}"
           comment-text: "Thanks for opening this issue!"
       - name: "create-once-boards"
         uses: JEStaubach/action-create-once-boards@dev
         with:
-          action-token: "${{ secrets.GITHUB_ACTIONS }}"
+          action-token: "${{ secrets.Access_token }}"
       - name: "create-card-in-board-column"
         uses: JEStaubach/action-create-card-in-board-column@dev
         with:
