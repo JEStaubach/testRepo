@@ -1,0 +1,19 @@
+name: tag-issue-with-branch
+on:
+  schedule:
+    # min hour dayOfMonth month dayOfWeek
+    # / => each
+    -cron: '*/5 * * * *'
+jobs:
+  tag_wip_issue:
+    name: "tag-issue-with-branch"
+    runs-on: ubuntu-latest
+    steps:
+      - name: "tag-issue-with-branch"
+        uses: JEStaubach/action-tag-issue-with-branch@dev
+        with:
+          action-token: "${{ secrets.Access_token }}"
+      - name: "move-issue-card"
+        uses: JEStaubach/action-move-issue-card@dev
+        with:
+          action-token: "${{ secrets.Access_token }}"
