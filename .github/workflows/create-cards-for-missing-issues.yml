@@ -12,5 +12,5 @@ jobs:
       - name: "create-cards-for-missing-issues"
         uses: JEStaubach/action-create-cards-for-missing-issues@dev
         with:
-          action-token: "${{ secrets.Access_token }}"
+          action-token: "${{ secrets.GITHUB_TOKEN }}"
           repo: "${{ github.repository }}"
