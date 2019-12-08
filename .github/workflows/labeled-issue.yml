@@ -10,12 +10,12 @@ jobs:
       - name: "adjust-title-to-conventions"
         uses: JEStaubach/action-adjust-title-to-conventions@dev
         with:
-          action-token: "${{ secrets.Access_token }}"
+          action-token: "${{ secrets.GITHUB_TOKEN }}"
       - name: "adjust-labels-to-conventions"
         uses: JEStaubach/action-adjust-labels-to-conventions@dev
         with:
-          action-token: "${{ secrets.Access_token }}"
+          action-token: "${{ secrets.GITHUB_TOKEN }}"
       - name: "move-issue-card"
         uses: JEStaubach/action-move-issue-card@dev
         with:
-          action-token: "${{ secrets.Access_token }}"
+          action-token: "${{ secrets.GITHUB_TOKEN }}"
