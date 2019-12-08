@@ -12,5 +12,5 @@ jobs:
       - name: "move-all-cards-to-correct-position"
         uses: JEStaubach/action-move-all-cards-to-correct-position@dev
         with:
-          action-token: "${{ secrets.Access_token }}"
+          action-token: "${{ secrets.GITHUB_TOKEN }}"
           repo: "${{ github.repository }}"
