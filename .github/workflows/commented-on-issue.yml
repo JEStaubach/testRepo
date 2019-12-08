@@ -10,4 +10,4 @@ jobs:
       - name: "adjust-commented-label"
         uses: JEStaubach/action-adjust-commented-label@dev
         with:
-          action-token: "${{ secrets.Access_token }}"
+          action-token: "${{ secrets.GITHUB_TOKEN }}"
