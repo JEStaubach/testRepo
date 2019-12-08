@@ -3,7 +3,7 @@ on:
   schedule:
     # min hour dayOfMonth month dayOfWeek
     # / => each
-    - cron: '* * */1 * *'
+    - cron: '0 0 * * *'
 jobs:
   move-all-cards-to-correct-position:
     name: "move-all-cards-to-correct-position"
