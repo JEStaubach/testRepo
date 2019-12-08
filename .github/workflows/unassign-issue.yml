@@ -10,4 +10,4 @@ jobs:
       - name: "move-issue-card"
         uses: JEStaubach/action-move-issue-card@dev
         with:
-          action-token: "${{ secrets.Access_token }}"
+          action-token: "${{ secrets.GITHUB_TOKEN }}"
