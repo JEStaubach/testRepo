@@ -15,14 +15,14 @@ jobs:
       - name: "create-once-boards"
         uses: JEStaubach/action-create-once-boards@dev
         with:
-          action-token: "${{ secrets.Access_token }}"
+          action-token: "${{ secrets.GITHUB_TOKEN }}"
       - name: "create-once-labels"
         uses: JEStaubach/action-create-once-labels@dev
         with:
-          action-token: "${{ secrets.Access_token }}"
+          action-token: "${{ secrets.GITHUB_TOKEN }}"
       - name: "create-card-in-board-column"
         uses: JEStaubach/action-create-card-in-board-column@dev
         with:
-          action-token: "${{ secrets.Access_token }}"
+          action-token: "${{ secrets.GITHUB_TOKEN }}"
           board-name: "triage"
           column-name: "awaiting review"
