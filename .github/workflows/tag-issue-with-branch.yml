@@ -3,7 +3,7 @@ on:
   schedule:
     # min hour dayOfMonth month dayOfWeek
     # / => each
-    - cron: '*/5 * * * *'
+    - cron: '*/20 * * * *'
 jobs:
   tag_wip_issue:
     name: "tag-issue-with-branch"
