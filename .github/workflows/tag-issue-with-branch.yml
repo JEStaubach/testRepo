@@ -12,5 +12,5 @@ jobs:
       - name: "tag-issue-with-branch"
         uses: JEStaubach/action-tag-issue-with-branch@dev
         with:
-          action-token: "${{ secrets.Access_token }}"
+          action-token: "${{ secrets.GITHUB_TOKEN }}"
           repo: "${{ github.repository }}"
