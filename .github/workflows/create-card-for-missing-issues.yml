@@ -1,0 +1,16 @@
+name: create-cards-for-missing-issues
+on:
+  schedule:
+    # min hour dayOfMonth month dayOfWeek
+    # / => each
+    - cron: '*/120 * * * *'
+jobs:
+  create-cards-for-missing-issues:
+    name: "create-cards-for-missing-issues"
+    runs-on: ubuntu-latest
+    steps:
+      - name: "create-cards-for-missing-issues"
+        uses: JEStaubach/action-create-cards-for-missing-issues@dev
+        with:
+          action-token: "${{ secrets.Access_token }}"
+          repo: "${{ github.repository }}"
