@@ -1,0 +1,16 @@
+name: move-all-cards-to-correct-position
+on:
+  schedule:
+    # min hour dayOfMonth month dayOfWeek
+    # / => each
+    - cron: '* * */1 * *'
+jobs:
+  move-all-cards-to-correct-position:
+    name: "move-all-cards-to-correct-position"
+    runs-on: ubuntu-latest
+    steps:
+      - name: "move-all-cards-to-correct-position"
+        uses: JEStaubach/action-move-all-cards-to-correct-position@dev
+        with:
+          action-token: "${{ secrets.Access_token }}"
+          repo: "${{ github.repository }}"
